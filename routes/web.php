@@ -22,8 +22,19 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::post('/novobuffet', 'App\Http\Controllers\BuffetController@novobuffet');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/lista', 'App\Http\Controllers\BuffetController@lista')->middleware('auth');
+
+Route::get('/addbuffet', function () {
+    return view('addbuffet');
+})->middleware('auth');
+
+
+
+
 

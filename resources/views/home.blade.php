@@ -50,16 +50,18 @@
     
 
     <div class="buttons-container">
-        <a class="study" href="telainicial/index.php">
+        <a class="study" href="{{ url('/addbuffet') }}">
             <img src="assets/landing/images/icons/pagamento.svg" alt="Promover">
-            Donos de Buffet
+            Divulgar seu local 
         </a>
 
-        <a class="give-classes" href="telainicial/index.php">
+        <a class="give-classes" href="{{ url('/lista') }}">
             <img src="assets/landing/images/icons/agenciamento.svg" alt="Agenciar">
             Agende sua festa
             
         </a>
+
+        
     </div>
 
    

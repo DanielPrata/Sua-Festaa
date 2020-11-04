@@ -10,7 +10,7 @@
 	<!-- Title Tag  -->
     <title>Sua Festa | Sua Plataforma de Festas online</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="assets/lista/images/favicon.png">
+	<link rel="icon" type="image/png" href="assets/images/logo.png">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
@@ -46,7 +46,7 @@
 
 	<style> 
         * {
-          font-family: 'poppins', sans-serif;
+          font-family: 'roboto', sans-serif;
         }
         .profile-container {
             width: 100%;
@@ -239,7 +239,7 @@
           <span>Bem vindo</span>
           
   
-        <a href="{{ url('addbuffet') }}" class="button">Cadastrar seu buffet</a>
+        <a ></a>
         <form action="{{url('home')}}">
           <button type="submit">
             <img src="assets/imglogin/logout.svg" size={18} color="#E02041" class="sair"/>

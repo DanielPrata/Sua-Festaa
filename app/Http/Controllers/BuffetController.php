@@ -14,7 +14,7 @@ class BuffetController extends Controller
     {
        buffets::create($request->all());
 
-       return view('/home');
+       return view('/dashboard');
     }
 
     public function lista() {

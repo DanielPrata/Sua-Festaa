@@ -34,6 +34,14 @@ Route::get('/addbuffet', function () {
     return view('addbuffet');
 })->middleware('auth');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
+
+Route::get('/geradorconvite', function () {
+    return view('geradorconvite');
+})->middleware('auth');
+
 
 
 

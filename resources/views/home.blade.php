@@ -42,7 +42,7 @@
 
         <a class="study" href="{{ url('/lista') }}">
             <i class="far fa-calendar-check"></i>
-            ⠀Agendar
+            ⠀Alugar
             
         </a>
 

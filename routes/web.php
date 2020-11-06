@@ -44,5 +44,9 @@ Route::get('/geradorconvite', function () {
 
 
 
+Route::get('/alugarbuffet/{id}', 'App\Http\Controllers\BuffetController@alugarView')->middleware('auth');
+
+
+
 
 

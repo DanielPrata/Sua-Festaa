@@ -236,7 +236,7 @@
     <div class="profile-container">
         <header>
           <img src="assets/imglogin/logo.png" alt="Sua Festa" />
-          <span>Bem vindo</span>
+		<span>Bem vindo {{Auth::user()->name}}</span>
           
   
         <a ></a>
@@ -397,7 +397,8 @@
 										</div>
 									</div>
 									<div class="product-content">
-                                    <h3><a href="product-details.html">{{ $b->nome}}</a></h3>
+									<h3><a href="{{ url("alugarbuffet/$b->id") }}">{{ $b->nome}}</a></h3>
+								
 										<div class="product-price">
 											<span>{{$b->valor}}</span>
                                         </div>

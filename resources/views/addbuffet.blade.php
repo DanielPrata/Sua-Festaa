@@ -168,15 +168,17 @@
 
         <form action="{{ asset('/novobuffet') }}" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-          <input placeholder="Nome do buffet" type="text" name="nome" required />
+          <input placeholder="Nome do buffet" type="text" name="nome" required maxlength="50"/>
 
-          <textarea placeholder="Descrição do buffet" name="descricao" required></textarea>
+          <textarea placeholder="Descrição do buffet" name="descricao" required maxlength="500"></textarea>
 
-          <input type="text" step="0.01" name="valor" min="0.01" placeholder="Valor" required>
+          <input type="text" step="0.01" name="valor" min="0.01" placeholder="Valor" required maxlength="50">
 
-          <input placeholder="Endereço" type="text" name="endereco" required />
+          <input placeholder="Endereço" type="text" name="endereco" required maxlength="50"/>
 
-          <input placeholder="Telefone de contato" type="number" name="telefone"  required />
+		  <input placeholder="Telefone de contato" type="number" name="telefone"  required maxlength="3"/>
+		  
+		  <input placeholder="Email" type="email" name="email" required />
 		  
 
 

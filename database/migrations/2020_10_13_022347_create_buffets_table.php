@@ -20,6 +20,7 @@ class CreateBuffetsTable extends Migration
             $table->string('valor', 50);
             $table->string('endereco', 50);
             $table->string('telefone', 20);
+            $table->string('email', 50);
             $table->timestamps();
         });
     }

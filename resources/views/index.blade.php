@@ -66,7 +66,7 @@
                     <nav class="navbar navbar-expand-lg">
                        
                         <a class="navbar-brand" href="#">
-                            <img src="assets/homepage/images/logo.png" alt="Logo" height="60px" width="180px">
+                            <img src="assets/homepage/images/logo.png" alt="Logo" height="57px" width="210px">
                         </a>
                         
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
@@ -278,7 +278,7 @@
                         </div>
                         <div class="pricing-header text-center">
                             <h5 class="sub-title">Starter</h5>
-                            <p class="month"><span class="price">$ 199</span>/month</p>
+                            <p class="month"><span class="price">$ </span>/</p>
                         </div>
                         <div class="pricing-list">
                             <ul>
@@ -305,7 +305,7 @@
                         </div>
                         <div class="pricing-header text-center">
                             <h5 class="sub-title">Premium</h5>
-                            <p class="month"><span class="price">$ 699</span>/month</p>
+                            <p class="month"><span class="price">$ </span>/</p>
                         </div>
                         <div class="pricing-list">
                             <ul>

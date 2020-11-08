@@ -8,4 +8,8 @@
 <br>
 <h2>{{$buffets->telefone}}</h2>
 <br>
+<h2>{{$buffets->email}}</h2>
+<br>
+
+<a href="mailto:{{$buffets->email}}">Enviar email</a>
 

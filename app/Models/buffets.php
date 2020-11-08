@@ -18,5 +18,6 @@ class buffets extends Model
         'valor',
         'endereco',
         'telefone',
+        'email'
     ];
 }

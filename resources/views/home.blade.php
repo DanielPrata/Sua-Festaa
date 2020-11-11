@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="assets/dashboard/images/logo.png"/>
     <script src="https://kit.fontawesome.com/35e789ec36.js" crossorigin="anonymous"></script>
 
-    <title>Sua Festa | Sua Plataforma de Festas online</title>
+    <title>Página inicial</title>
 </head>
 
 <body>
@@ -50,8 +50,8 @@
                 <p>Quer esolher um local perfeito pro seu evento?</p>
                 
                 
-            <a href="{{ url('/dashboard') }}" >DIVULGAR</a>
-            <a href="{{ url('/lista') }}">ALUGAR</a>
+            <a href="{{ url('/dashboard') }}" ><i class="fas fa-share"></i>  DIVULGAR</a>
+            <a href="{{ url('/lista') }}"><i class="far fa-calendar-alt"></i>  ALUGAR</a>
                 
             </div>
             <div class="col-12 col-lg-8">

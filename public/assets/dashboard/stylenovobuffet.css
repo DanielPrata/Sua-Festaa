@@ -41,6 +41,47 @@
     margin-top: 9px;
   }
 
+  form .checkbox1 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 160px;
+    }
+
+    form .checkbox2 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 141px;
+    }
+
+    form .checkbox3 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 124px;
+    }
+
+    .labeltexto {
+      font: 700 22px  'roboto', sans-serif;
+      color: #333;
+    }
+
   .botoes {
     width: 850px;
     margin: 0 auto;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sua Festa | Sua Plataforma de Festas online</title>
+	<title>Adicionar local</title>
 
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="icon" type="image/png" href="assets/dashboard/images/logo.png"/>
@@ -166,7 +166,8 @@
       <div class="content">
         
 
-        <form action="{{ asset('/novobuffet') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ asset('/novobuffet') }}" method="POST" enctype="multipart/form-data">
+			{{ csrf_field() }}
           <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <input placeholder="Nome do buffet" type="text" name="nome" required maxlength="50"/>
 
@@ -176,10 +177,17 @@
 
           <input placeholder="Endereço" type="text" name="endereco" required maxlength="50"/>
 
-		  <input placeholder="Telefone de contato" type="number" name="telefone"  required maxlength="3"/>
+		  <input placeholder="Telefone de contato" type="number" name="telefone"  required/>
 		  
 		  <input placeholder="Email" type="email" name="email" required />
+		  <br><BR>
+		  <label class="labeltexto"> Oferece festa residencial?   <input type="checkbox" class="checkbox1" name="residencial" value="{{ old('residencial') }}"/></label>
+		  <br><BR>
+		  <label class="labeltexto"> Tem suporte a casamentos?<input type="checkbox" class="checkbox2" name="casamento" value="{{ old('casamento') }}"/></label>
+		  <br><br>
+		  <label class="labeltexto"> Tem suporte a festas infantis?<input type="checkbox" class="checkbox3" name="infantil" value="{{ old('infantil') }}"/></label>
 		  
+
 
 
           <br>

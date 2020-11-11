@@ -9,7 +9,7 @@ class buffets extends Model
 {
     use HasFactory;
 
-    protected $table='buffets';
+    public $timestamps = false;
 
     protected $fillable=
     [
@@ -18,6 +18,10 @@ class buffets extends Model
         'valor',
         'endereco',
         'telefone',
-        'email'
+        'email',
+        'residencial',
+        'casamento',
+        'infantil'
     ];
+    protected $table='buffets';
 }

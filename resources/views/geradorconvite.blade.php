@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sua Festa | Sua Plataforma de Festas online</title>
+        <title>Gerador de convite</title>
 
         <meta
             name="viewport"

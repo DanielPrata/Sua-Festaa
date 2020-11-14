@@ -29,7 +29,40 @@
 @endif
 <br>
 
+@if ($buffets->debutante === 0)
+<h2> Não oferece festa debutante </h2>
+@else
+<h2> Oferece festa debutante. </h2>
+@endif
+<br>
 
+@if ($buffets->dj === 0)
+<h2> Não oferece DJ </h2>
+@else
+<h2> Oferece DJ. </h2>
+@endif
+<br>
+
+@if ($buffets->lembrancinha === 0)
+<h2> Não oferece lembrancinha </h2>
+@else
+<h2> Oferece lembrancinha. </h2>
+@endif
+<br>
+
+@if ($buffets->comida === 0)
+<h2> Não oferece comida </h2>
+@else
+<h2> Oferece comida. </h2>
+@endif
+<br>
+
+@if ($buffets->brinquedo === 0)
+<h2> Não oferece brinquedo </h2>
+@else
+<h2> Oferece brinquedo. </h2>
+@endif
+<br>
 
 <a href="mailto:{{$buffets->email}}">Enviar email</a>
 

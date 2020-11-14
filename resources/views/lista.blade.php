@@ -1,88 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt_br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Festa | Sua plataforma de Festas</title>
+    <!--LINKS DOS CSSs-->
+    <link rel="stylesheet" href="assets/filtro/styles/main.css">
+    <link rel="stylesheet" href="assets/filtro/styles/partials/header.css">
+    <link rel="stylesheet" href="assets/filtro/styles/partials/forms.css">
+    <link rel="stylesheet" href="assets/filtro/styles/partials/page-study.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/35e789ec36.js" crossorigin="anonymous"></script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Shop Homepage - Start Bootstrap Template</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="assets/lista/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="assets/lista/css/shop-homepage.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
-
-<body>
-	
-
-  
-
-  <!-- Page Content -->
-  <div class="container">
-	  
-
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
-      <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9">
-
-        
-        <div class="row">
-			@foreach($buffets as $b)
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="{{ url("alugarbuffet/$b->id") }}">{{$b->nome}}</a>
-                </h4>
-                <h5>{{$b->valor}}</h5>
-                <p class="card-text">{{$b->descricao}}</p>
-              </div>
-              <div class="card-footer">
-                <a class="link-contato" href="{{ url("alugarbuffet/$b->id") }}">Entrar em contato</a>
-              </div>
+<body id="page-study">
+    <div id="container">
+        <header class="page-header">
+            
+            <button href="#" class="botaosair"> <i class="fas fa-sign-out-alt"></i>  VOLTAR PRA HOME</button>
+            <!--FILTROS DE BUFFETS-->
+            <div class="header-content">
+                
+                <strong>Todos os locais disponíveis</strong>
+                
+               
+               
+                
+                <form id="search-teachers">
+                    <div class="select-block">
+                        <label for="subject">Tipos de espaços</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="">Selecione uma opção</option>
+                            <option value="teste">exemplo1</option>
+                            <option value="teste1">exemplo2</option>
+                        </select>
+                    </div>
+                    <div class="select-block">
+                        <label for="weekday">Tipos de festas</label>
+                        <select name="weekday" id="weekday">
+                            <option value="" disabled="">Selecione uma opção</option>
+                            <option value="teste1">exemplo1</option>
+                            <option value="teste2">exemplo2</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="time">Faixa de preço</label>
+                        <input name="number">
+                    </div>
+                    <button type="submit">Filtrar</button>
+                </form>
             </div>
-		  </div>
-      @endforeach
-      
+        </header>
+        <main>
 
+          @foreach($buffets as $b)
+            <article class="teacher-item">
+                <header>
+                    <img src="fotodobanco" alt="Fotos">
+                    <div>
+                        <strong>{{ $b->nome }}</strong>
+                        <span>{{ $b->endereco }}</span>
+                    </div>
+                </header>
+              <p><B>Descrição:</B> {{ $b->descricao }}</p>
+                <footer>
+                    <p>Preço<strong>{{ $b->valor }}</strong>
+                    </p>
+                    <a href="{{ url("alugarbuffet/$b->id") }}" class="button" target="_blank">  
+                      <i class="fas fa-mail-bulk"></i>Saiba mais
+                    </a>
+                </footer>
+            </article>
+          @endforeach
 
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.col-lg-9 -->
-
+        </main>
     </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
- 
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="assets/lista/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/lista/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

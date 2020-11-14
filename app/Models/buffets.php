@@ -21,7 +21,12 @@ class buffets extends Model
         'email',
         'residencial',
         'casamento',
-        'infantil'
+        'infantil',
+        'debutante',
+        'dj',
+        'lembrancinha',
+        'comida',
+        'brinquedo'
     ];
     protected $table='buffets';
 }

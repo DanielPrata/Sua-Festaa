@@ -50,7 +50,7 @@
       position: relative;
       top: -1px;
       overflow: hidden;
-      margin-left: 160px;
+      margin-left: 205px;
     }
 
     form .checkbox2 {
@@ -62,7 +62,7 @@
       position: relative;
       top: -1px;
       overflow: hidden;
-      margin-left: 141px;
+      margin-left: 189px;
     }
 
     form .checkbox3 {
@@ -74,10 +74,77 @@
       position: relative;
       top: -1px;
       overflow: hidden;
-      margin-left: 124px;
+      margin-left: 174px;
     }
 
+    form .checkbox4 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 127px;
+    }
+
+    form .checkbox5 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 256px;
+    }
+
+    form .checkbox6 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 219px;
+    }
+
+    form .checkbox7 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 245px;
+    }
+
+    form .checkbox8 {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin:0;
+      vertical-align: bottom;
+      position: relative;
+      top: -1px;
+      overflow: hidden;
+      margin-left: 212px;
+    }
+
+
     .labeltexto {
+      font: 700 18px  'roboto', sans-serif;
+      color: #333;
+    }
+
+    .diferenciais {
+      text-align: center;
       font: 700 22px  'roboto', sans-serif;
       color: #333;
     }
@@ -163,8 +230,8 @@
     max-width: 1100px;
     height: 100vh;
     margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin-top: 230px;
+    margin-bottom: 230px;
   
     display: flex;
     align-items: center;

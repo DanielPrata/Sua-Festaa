@@ -24,6 +24,11 @@ class CreateBuffetsTable extends Migration
             $table->boolean('residencial')->nullable()->default(0);
             $table->boolean('casamento')->nullable()->default(0);
             $table->boolean('infantil')->nullable()->default(0);
+            $table->boolean('debutante')->nullable()->default(0);
+            $table->boolean('dj')->nullable()->default(0);
+            $table->boolean('lembrancinha')->nullable()->default(0);
+            $table->boolean('comida')->nullable()->default(0);
+            $table->boolean('brinquedo')->nullable()->default(0);
 
         });
     }

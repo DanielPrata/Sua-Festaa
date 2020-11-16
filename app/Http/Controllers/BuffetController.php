@@ -18,9 +18,32 @@ class BuffetController extends Controller
 
     public function novobuffet(Request $request) 
     {
-       buffets::create($request->all());
 
+        
+        $this->validate($request, [
+            'images' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        if($request->hasfile('images'))
+        {
+
+           foreach($request->file('images') as $image)
+           {
+               $name=$image->getClientOriginalName();
+               $image->move(public_path().'/images/', $name); 
+               $data[] = $name;  
+               
+           }
+        }
+
+        $pessoa= new buffets($request->all());
+        $pessoa->images=json_encode($data);
+       
+       $pessoa->save();
        return view('/dashboard');
+
+       
     }
 
     public function lista() {

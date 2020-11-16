@@ -1,0 +1,92 @@
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+    top: 100;
+    box-shadow: 0px 0px 15px #000000;
+  }
+  
+  /* Botões seguinte e anterior */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 10px 10px 0;
+    user-select: none;
+  }
+  
+  /* Posicione o "próximo botão" à direita */
+  .next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  /* Ao passar o mouse, adicione uma cor de fundo preta com um pouco de transparência */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Texto da legenda */
+  .text {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 9px;
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+  }
+  
+  /* Texto numérico (1/6 etc) */
+  .numbertext {
+    top: 0;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+  }
+  
+  /* Os pontos / marcadores / indicadores */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 110 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #4F4F4F;
+  }
+  
+  /*Animação de desbotamento */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.0s;
+    animation-name: fade;
+    animation-duration: 1.0s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }

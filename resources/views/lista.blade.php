@@ -19,11 +19,21 @@
     <div id="container">
         <header class="page-header">
             
-            <button href="#" class="botaosair"> <i class="fas fa-sign-out-alt"></i>  VOLTAR PRA HOME</button>
+
+            <a href="{{ url('/home')}}" style="text-decoration: none;">
+            <button class="botaosair" type="button">
+                <i class="fas fa-sign-out-alt"></i> 
+                VOLTAR
+            </button>
+        </a>
+
+
             <!--FILTROS DE BUFFETS-->
             <div class="header-content">
                 
-                <strong>Todos os locais disponíveis</strong>
+                <strong>Todos os locais disponíveis 
+                    <img src="assets/landingpage/images/logo2.png" alt="website logo">
+                </strong>
                 
                
                
@@ -33,32 +43,50 @@
                         <label for="subject">Tipos de espaços</label>
                         <select name="subject" id="subject">
                             <option value="" disabled="">Selecione uma opção</option>
-                            <option value="teste">exemplo1</option>
-                            <option value="teste1">exemplo2</option>
+                            <option value="teste">Buffet</option>
+                            <option value="teste1">Casa com piscina</option>
                         </select>
                     </div>
                     <div class="select-block">
                         <label for="weekday">Tipos de festas</label>
                         <select name="weekday" id="weekday">
                             <option value="" disabled="">Selecione uma opção</option>
-                            <option value="teste1">exemplo1</option>
-                            <option value="teste2">exemplo2</option>
+                            <option value="teste1">Casamento</option>
+                            <option value="teste2">Infantil</option>
+                            <option value="teste3">Debutante</option>
                         </select>
                     </div>
-                    <div class="input-block">
-                        <label for="time">Faixa de preço</label>
-                        <input name="number">
-                    </div>
+                   
                     <button type="submit">Filtrar</button>
                 </form>
             </div>
         </header>
         <main>
 
-          @foreach($buffets as $b)
+            @if ($buffets == null)
+
             <article class="teacher-item">
                 <header>
-                    <img src="fotodobanco" alt="Fotos">
+                
+                    <div>
+                        <strong>No momento não temos nenhum local cadastrado. Tente novamente!</strong>
+                        <span></span>
+                    </div>
+                </header>
+              <p></p>
+                <footer>
+                    <button onClick="atualiza()" type="submit"><i class="fas fa-sync-alt"></i> TENTE NOVAMENTE</button>
+                </footer>
+            </article>
+                
+            @else
+
+            @foreach($buffets as $b)
+            <article class="teacher-item">
+                <header>
+                    
+                    <img src="{{ env('APP_URL') }}/{{ json_decode($b->images)[1] }}"/>
+
                     <div>
                         <strong>{{ $b->nome }}</strong>
                         <span>{{ $b->endereco }}</span>
@@ -66,16 +94,28 @@
                 </header>
               <p><B>Descrição:</B> {{ $b->descricao }}</p>
                 <footer>
-                    <p>Preço<strong>{{ $b->valor }}</strong>
+                    <p>Valor: <strong>{{ $b->valor }}</strong>
                     </p>
-                    <a href="{{ url("alugarbuffet/$b->id") }}" class="button" target="_blank">  
+                    <a href="{{ url("alugarbuffet/$b->id") }}" class="button">  
                       <i class="fas fa-mail-bulk"></i>Saiba mais
                     </a>
                 </footer>
             </article>
           @endforeach
+                
+            @endif
+                
+           
 
         </main>
     </div>
+
+    <script type="text/javascript">
+
+    function atualiza() {
+        window.location.href = 'http://localhost/TCC_SuaFesta/public/lista';
+    }
+    </script>
+
 </body>
 </html>

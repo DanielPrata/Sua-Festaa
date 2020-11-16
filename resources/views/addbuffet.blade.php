@@ -8,7 +8,10 @@
             content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="icon" type="image/png" href="assets/dashboard/images/logo.png"/>
 
-        <!-- Import lib -->
+       
+        <script
+            src="https://github.com/makeusabrew/bootbox/releases/download/v4.4.0/bootbox.min.js"></script>
+
         <link
             rel="stylesheet"
             type="text/css"
@@ -28,6 +31,8 @@
             type="text/css"
             href="assets/dashboard/stylenovobuffet.css">
     </head>
+
+
     <body>
         <body class="overlay-scrollbar">
             <!-- navbar -->
@@ -135,7 +140,7 @@
                             </span>
                         </a>
                     </li>
-
+                    
                     <li class="sidebar-nav-item">
                         <a href="{{ url('/geradorconvite') }}" class="sidebar-nav-link">
                             <div>
@@ -146,7 +151,7 @@
                     </li>
 
                     <li class="sidebar-nav-item">
-                        <a href="#" class="sidebar-nav-link">
+                        <a href="{{ url('/addbuffet') }}" class="sidebar-nav-link">
                             <div>
                                 <i class="fas fa-plus-circle"></i>
                             </div>
@@ -228,9 +233,12 @@
 								name="email" 
 								required="required"/>
 
-								<input  
-								type="file" multiple 
-								/>
+							<input
+                                type="file"
+                                name="images[]"
+                                id="images"
+                                accept=".jpeg, .png, .jpg, .gif, .svg"
+                                multiple="multiple" />
 							
 
                             <br><br>
@@ -316,8 +324,9 @@
                 </div>
 
             </div>
-            <!-- end main content -->
-            <!-- import script -->
+
+            
+              
             <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
             <script src="assets/dashboard/index.js"></script>

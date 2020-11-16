@@ -29,7 +29,7 @@
     justify-content: center;
 
     transition: background 0.2s;
-    margin-top: 3.2rem;
+    margin-top: 2.4rem;
 }
 
 #search-teachers button:hover {
@@ -55,9 +55,10 @@
 }
 
 .teacher-item header img {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
+    width: 20rem;
+    height: 15rem;
+    
+    
 }
 
 .teacher-item header div {
@@ -173,11 +174,14 @@
     }
 
     #search-teachers {
+        align-items: center;
         display:grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
         position: absolute;
         bottom: -28px;
+        margin-left: 135px;
+        
     }
 
     #page-study main {
@@ -200,9 +204,27 @@
     }
 
     .teacher-item footer button {
-        width: 245px;
-        font-size: 16px;
-        justify-content: center;
+        width: 20rem;
+    height: 5.6rem;
+    background: #8111a7;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.4rem Roboto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    text-decoration: none;
+    
+    transition: background 0.2s;
+    margin-left: 1.6rem;
+    }
+
+    .teacher-item footer button:hover {
+        background: #774DD6;
     }
 
     .teacher-item footer button img {

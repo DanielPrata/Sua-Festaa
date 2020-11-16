@@ -1,72 +1,179 @@
-<h2>{{$buffets->nome}}</h2>
-<br>
-<h2>{{$buffets->descricao}}</h2>
-<br>
-<h2>{{$buffets->endereco}}</h2>
-<br>
-<h2>{{$buffets->valor}}</h2>
-<br>
-<h2>{{$buffets->telefone}}</h2>
-<br>
-<h2>{{$buffets->email}}</h2>
-<br>
-@if ($buffets->residencial === 0)
-<h2> Não oferece festa residencial </h2>
-@else
-<h2> Oferece festa residencial. </h2>
-@endif
-<br>
-@if ($buffets->casamento === 0)
-<h2> Não oferece festa de casamento </h2>
-@else
-<h2> Oferece festa de casamento. </h2>
-@endif
-<br>
-@if ($buffets->infantil === 0)
-<h2> Não oferece festa infantil </h2>
-@else
-<h2> Oferece festa infantil. </h2>
-@endif
-<br>
+<!DOCTYPE html>
+<html lang="pt_br">
 
-@if ($buffets->debutante === 0)
-<h2> Não oferece festa debutante </h2>
-@else
-<h2> Oferece festa debutante. </h2>
-@endif
-<br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Festa | Sua plataforma de festas</title>
 
-@if ($buffets->dj === 0)
-<h2> Não oferece DJ </h2>
-@else
-<h2> Oferece DJ. </h2>
-@endif
-<br>
+     <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/main.css">
+    <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/partials/header.css">
+    <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/partials/forms.css">
+    <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/partials/page-give-classes.css">
+    <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/partials/carrosel.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></head>
 
-@if ($buffets->lembrancinha === 0)
-<h2> Não oferece lembrancinha </h2>
-@else
-<h2> Oferece lembrancinha. </h2>
-@endif
-<br>
+<body id="page-give-classes">
 
-@if ($buffets->comida === 0)
-<h2> Não oferece comida </h2>
-@else
-<h2> Oferece comida. </h2>
-@endif
-<br>
+    <div id="container">
+        <!--CABEÇALHO-->
+        <header class="page-header">
+            <div class="top-bar-container">
+            <a href="{{ url('/lista') }}">
+                    <img src="{{env('ALUGUEL_CSS')}}/images/icons/voltar.svg" alt="Voltar"> 
+                </a>
+            <img src="{{ env('LOGO') }}" alt="website logo">
+            </div>
 
-@if ($buffets->brinquedo === 0)
-<h2> Não oferece brinquedo </h2>
-@else
-<h2> Oferece brinquedo. </h2>
-@endif
-<br>
+            <div class="header-content">
+                <strong>{{$buffets->nome}}</strong>
+                <p><b>VALOR:</b> {{ $buffets->valor }}</p>
+            </div>
+        </header>
 
-<a href="mailto:{{$buffets->email}}">Enviar email</a>
 
-<br><br>
+        <main>
+            <!--CONTEÚDO PRINCIPAL-->
 
-<a href="https://api.whatsapp.com/send?phone=55{{$buffets->telefone}}&text=Olá,%20meu%20amigo!.">Whatsaap</a>
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
 
+                @foreach(json_decode($buffets->images) as $image)
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="{{ env('APP_URL') }}/{{ $image }}"style="width: 600px; height: 400px;">
+                </div>
+
+         
+               
+                   
+          
+                @endforeach
+                
+
+               
+
+                <!--Botões seguinte e anterior -->
+                <a class="prev" onclick="plusSlides(-1)" title="anterior">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)" title="próximo">&#10095;</a>
+            </div>
+            <br>
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                // Controles seguinte / anterior
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                // Controles de imagem em miniatura
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {
+                        slideIndex = 1;
+                    }
+                    if (n < 1) {
+                        slideIndex = slides.length;
+                    }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script>
+            <br>
+
+            <p id="p-descrição">
+                Descrição: {{ $buffets->descricao }}
+            </p>
+            <BR>
+            <p id="p-descrição">
+                Endereço: {{ $buffets->endereco }}
+            </p>
+            <br><br>
+            <p id="p-descrição" style="text-align: center">DIFERENCIAIS: </p>
+            <br>
+
+            @if ($buffets->residencial === null)
+                <p id="p-descrição"> Oferece festa residencial. </p>
+                <br>
+                @endif
+                
+                @if ($buffets->casamento === null)
+                <p id="p-descrição"> Oferece festa de casamento. </p>
+                <br>
+                @endif
+                @if ($buffets->infantil === null)
+                <p id="p-descrição"> Oferece festa infantil. </p>
+                <br>
+                @endif
+                @if ($buffets->debutante === null)
+                <p id="p-descrição"> Oferece festa debutante. </p>
+                <br>
+                @endif
+                <br>
+            <p id="p-descrição" style="text-align: center">EXCLUSIVIDADES: </p>
+            <br>
+
+                @if ($buffets->dj === null)
+                <p id="p-descrição"> Oferece DJ. </p>
+                <br>
+                @endif
+
+                @if ($buffets->lembrancinha === null)
+                <p id="p-descrição"> Oferece lembrancinha. </p>
+                <br>
+                @endif
+
+                @if ($buffets->comida === null)
+                <p id="p-descrição"> Oferece comida. </p>
+                <br>
+                @endif
+
+                @if ($buffets->brinquedo === null)
+                <p id="p-descrição"> Oferece brinquedo. </p>
+                <br>
+                @endif
+                
+
+
+            <footer>
+                <!--RODAPÉ-->
+                <p>
+                    
+                    Converse via <br> WhatsApp ou Email
+                </p>
+                <a
+                href="https://api.whatsapp.com/send?phone=55{{$buffets->telefone}}&text=Olá, conheci seu local de festas pelo site SuaFesta, podemos conversar sobre um possível aluguel?"
+                style="text-decoration: none;">
+                <button type="submit" form="create-class">
+                    <img src="{{env('ALUGUEL_CSS')}}/images/icons/zap.svg" alt="Contato whatsapp">⠀⠀WhatsApp</button>
+                </a>
+
+                <a href="mailto:{{$buffets->email}}?subject=Olá, conheci o seu espaço de festa pelo site SuaFesta.
+                    &body=Olá, quero alugar o seu local. Podemos falar sobre isso?"
+                    style="text-decoration: none;">
+                    <button type="submit" form="create-class">
+                        <img src="{{env('ALUGUEL_CSS')}}/images/icons/email.svg" alt="Contato email">⠀⠀Email</button>
+                </a>
+            </footer>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

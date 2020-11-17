@@ -153,7 +153,7 @@
             <footer>
                 <!--RODAPÉ-->
                 <p>
-                    
+                    <img src="{{env('ALUGUEL_CSS')}}/images/icons/contact.svg" alt="Contato whatsapp">
                     Converse via <br> WhatsApp ou Email
                 </p>
                 <a

@@ -30,6 +30,8 @@
             rel="stylesheet"
             type="text/css"
             href="assets/dashboard/stylenovobuffet.css">
+
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </head>
 
 
@@ -231,7 +233,14 @@
 								placeholder="Email" 
 								type="email" 
 								name="email" 
-								required="required"/>
+                                required="required"/>
+                                
+                            <select name="tipo" id="tipo" required>
+                                <option value="1">Buffet de festas</option>
+                                <option value="2">Casa com piscina e/ou churrasqueira</option>
+                                <option value="3">Salão de festa</option>
+                            </select>
+                                
 
 							<input
                                 type="file"
@@ -324,6 +333,26 @@
                 </div>
 
             </div>
+
+            <script>
+
+                let input = document.querySelector('#images');
+                input.addEventListener('change', () => {
+                    if (input.files.length > 16) {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'O máximo de imagens por local cadastrado é 12...'
+                        })
+                        input.value = "";
+                        return false;
+                    } else {
+                        return true;
+                    }
+                });
+
+
+            </script>
 
             
               

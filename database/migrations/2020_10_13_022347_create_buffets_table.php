@@ -21,6 +21,7 @@ class CreateBuffetsTable extends Migration
             $table->string('endereco', 50);
             $table->string('telefone', 20);
             $table->string('email', 50);
+            $table->string('tipo', 1);
             $table->boolean('residencial')->nullable()->default(0);
             $table->boolean('casamento')->nullable()->default(0);
             $table->boolean('infantil')->nullable()->default(0);

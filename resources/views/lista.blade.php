@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://kit.fontawesome.com/35e789ec36.js" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
@@ -38,26 +40,34 @@
                
                
                 
-                <form id="search-teachers">
+                <form id="search-teachers" action="{{ asset('/filtrarbuffet') }}" method="post">
+                {{ csrf_field() }}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <div class="select-block">
-                        <label for="subject">Tipos de espaços</label>
-                        <select name="subject" id="subject">
-                            <option value="" disabled="">Selecione uma opção</option>
-                            <option value="teste">Buffet</option>
-                            <option value="teste1">Casa com piscina</option>
+                        <label for="diferenciais">Tipos de espaços</label>
+                        <select name="diferenciais" id="diferenciais">
+                            <option value="" disabled>Selecione uma opção</option>
+                            <option value="todos">Todos tipos de festa</option>
+                            <option value="residencial">Festa residencial</option>
+                            <option value="casamento">Festa de casamento</option>
+                            <option value="infantil">Festa infantil</option>
+                            <option value="debutante">Festa de debutante</option>
                         </select>
                     </div>
                     <div class="select-block">
-                        <label for="weekday">Tipos de festas</label>
-                        <select name="weekday" id="weekday">
+                        <label for="tipolocal">Tipos de festas</label>
+                        <select name="tipolocal" id="tipolocal">
                             <option value="" disabled="">Selecione uma opção</option>
-                            <option value="teste1">Casamento</option>
-                            <option value="teste2">Infantil</option>
-                            <option value="teste3">Debutante</option>
+                            <option value="todos">Todos tipos de locais</option>
+                            <option value="1">Buffets</option>
+                            <option value="2">Casas com piscina e/ou churrasqueira</option>
+                            <option value="3">Salões de festa</option>
+
+                            
                         </select>
                     </div>
                    
-                    <button type="submit">Filtrar</button>
+                   <button type="submit">Filtrar</button>
                 </form>
             </div>
         </header>
@@ -85,7 +95,7 @@
             <article class="teacher-item">
                 <header>
                     
-                    <img src="{{ env('APP_URL') }}/{{ json_decode($b->images)[1] }}"/>
+                    <img src="{{ env('APP_URL') }}/{{ json_decode($b->images)[0] }}"/>
 
                     <div>
                         <strong>{{ $b->nome }}</strong>
@@ -96,6 +106,27 @@
                 <footer>
                     <p>Valor: <strong>{{ $b->valor }}</strong>
                     </p>
+                    <br>
+                    @if ($b->tipo == 1)
+
+                    <p>Tipo do local: <strong>Buffet de festas</strong></p>
+                        
+                      
+                    @endif
+
+                    @if ($b->tipo == 2)
+
+                    <p>Tipo do local: <strong>Casa com piscina e/ou churrasqueira</strong></p>
+                        
+                    @endif
+
+                    @if ($b->tipo == 3)
+
+                    <p>Tipo do local: <strong>Salão de festas</strong></p>
+
+                    @endif
+
+
                     <a href="{{ url("alugarbuffet/$b->id") }}" class="button">  
                       <i class="fas fa-mail-bulk"></i>Saiba mais
                     </a>
@@ -104,7 +135,6 @@
           @endforeach
                 
             @endif
-                
            
 
         </main>

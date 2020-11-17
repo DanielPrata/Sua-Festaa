@@ -19,6 +19,7 @@ class buffets extends Model
         'endereco',
         'telefone',
         'email',
+        'tipo',
         'residencial',
         'casamento',
         'infantil',

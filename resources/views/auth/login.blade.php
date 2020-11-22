@@ -16,6 +16,13 @@
     </style>
 
 
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<script src="sweetalert2.all.min.js"></script>
+	<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
 </head>
 <body>
 	<img class="wave" src="assets/imglogin/wave.png">
@@ -45,8 +52,29 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		
-                              <input id="email" type="email" name="email" placeholder="Email" >
+           		   	
+
+							<input
+								id="email"
+								type="email"
+								class="form-control @error('email') is-invalid @enderror"
+								name="email"
+								value="{{ old('email') }}"
+								required="required"
+								autocomplete="email"
+								autofocus="autofocus">	
+								
+								
+							  @error('email')
+							  
+							  <script> Swal.fire({
+									  icon: 'error',
+									  title: 'Oops...',
+									  text: 'Os seus dados de login estão incorretos, tente novamente.'
+									  }) 
+							  </script> 
+
+						  	  @enderror
 
            		   </div>
            		</div>
@@ -56,7 +84,25 @@
            		   </div>
            		   <div class="div">
            		    	
-                           <input id="password" type="password" name="password" placeholder="Senha" >
+					<input
+						id="password"
+						type="password"
+						class="form-control @error('password') is-invalid @enderror"
+						name="password"
+						required="required"
+						autocomplete="current-password"
+						placeholder="Senha">
+						   
+						   @error('password')
+						   
+						    <script> Swal.fire({
+									  icon: 'error',
+									  title: 'Oops...',
+									  text: 'Os seus dados de login estão incorretos, tente novamente.'
+									  })
+							 </script>  
+							  
+						   @enderror
 
             	   </div>
 				</div>

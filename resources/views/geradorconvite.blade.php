@@ -27,6 +27,13 @@
             rel="stylesheet"
             type="text/css"
             href="assets/dashboard/stylenovobuffet.css">
+
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+            
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+
     </head>
     <body>
         <body class="overlay-scrollbar">
@@ -186,16 +193,13 @@
 							<h1>Digite as principais informações da Sua Festa.</h1>
 							<br>
 
-                            <input type="text" id="texto1" name="texto1" placeholder="Nome do aniversariante"/>
+                            <input type="text" id="texto1" name="texto1" placeholder="Nome(s)"/>
 
-                            <input type="number" id="texto2" name="texto2" placeholder="Idade"/>
-
-                            <input type="text" id="texto3" name="texto3" placeholder="Endereço do local"/>
+                            <input type="text" id="texto2" name="texto2" placeholder="Endereço do local / Nome do local"/>
 
                             <select name="convites" id="convites">
-                                <option value="1">1º Convite</option>
-                                <option value="2">2º Convite</option>
-                                <option value="3">3º Convite</option>
+                                <option value="1">Convite de festa de aniversário</option>
+                                <option value="2">Convite de casamento</option>
                                 
                               </select>
 
@@ -204,22 +208,15 @@
                                 id="convite1"
                                 width="110"
                                 height="110"
-								src="assets/gerador/convite1.png"
+								src="assets/gerador/convitenormal1.jpg"
                                 alt="convite1">
 
                                 <img
                                 id="convite2"
                                 width="110"
                                 height="110"
-								src="assets/gerador/convite2.png"
+								src="assets/gerador/convitecasamento1.jpg"
                                 alt="convite2">
-
-                                <img
-                                id="convite3"
-                                width="110"
-                                height="110"
-								src="assets/gerador/convite3.png"
-                                alt="convite3">
 
                             <button class="button" type="button" onclick="exibir()">Gerar convite</button>
 

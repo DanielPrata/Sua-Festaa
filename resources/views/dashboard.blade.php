@@ -33,73 +33,7 @@
 		<!-- form -->
 		
 		<!-- end form -->
-		<!-- nav right -->
-		<ul class="navbar-nav nav-right">
-			<li class="nav-item mode">
-				<a class="nav-link" href="#" onclick="switchTheme()">
-					<i class="fas fa-moon dark-icon"></i>
-					<i class="fas fa-sun light-icon"></i>
-				</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link">
-					<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
-					<span class="navbar-badge">1</span>
-				</a>
-				<ul id="notification-menu" class="dropdown-menu notification-menu">
-					<div class="dropdown-menu-header">
-						<span>
-							Notificações
-						</span>
-					</div>
-					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
-						<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-gift"></i>
-								</div>
-								<span>
-									Há um novo usuário interessado no seu local: "CASA COM PISCINA"
-									<br>
-									<span>
-										10/10/2020
-									</span>
-								</span>
-							</a>
-						</li>
-						
-					</div>
-					<div class="dropdown-menu-footer">
-						
-					</div>
-				</ul>
-			</li>
-			<li class="nav-item avt-wrapper">
-				<div class="avt dropdown">
-					<img src="assets/dashboard/images/tuat.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
-					<ul id="user-menu" class="dropdown-menu">
-						<li  class="dropdown-menu-item">
-							<a class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-user-tie"></i>
-								</div>
-								<span>Perfil</span>
-							</a>
-						</li>
-					
-						
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-sign-out-alt"></i>
-								</div>
-								<span>Sair</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
+		
 		<!-- end nav right -->
 	</div>
 	<!-- end navbar -->
@@ -181,7 +115,7 @@
 			
 		</div>
 		<div class="row">
-			<div class="col-8 col-m-12 col-sm-12">
+			<div class="col-12 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<h3>
@@ -278,20 +212,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-4 col-m-12 col-sm-12">
-				<div class="card">
-					<div class="card-header">
-						<h3>
-							Diferentes pacotes 
-						</h3>
-						<i class="fas fa-ellipsis-h"></i>
-					</div>
-					<div class="card-content">
-						
-						
-					</div>
-				</div>
-			</div>
+		
 		</div>
 		<div class="row">
 			<div class="col-12 col-m-12 col-sm-12">

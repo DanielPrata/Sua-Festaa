@@ -158,7 +158,7 @@
                 </p>
                 <a
                 href="https://api.whatsapp.com/send?phone=55{{$buffets->telefone}}&text=Olá, conheci seu local de festas pelo site SuaFesta, podemos conversar sobre um possível aluguel?"
-                style="text-decoration: none;">
+                style="text-decoration: none;" target="_blank">
                 <button type="submit" form="create-class">
                     <img src="{{env('ALUGUEL_CSS')}}/images/icons/zap.svg" alt="Contato whatsapp">⠀⠀WhatsApp</button>
                 </a>

@@ -31,7 +31,12 @@
             type="text/css"
             href="assets/dashboard/stylenovobuffet.css">
 
+
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+            <script src="sweetalert2.all.min.js"></script>
+            <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+            <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     </head>
 
 
@@ -247,7 +252,8 @@
                                 name="images[]"
                                 id="images"
                                 accept=".jpeg, .png, .jpg, .gif, .svg"
-                                multiple="multiple" />
+                                multiple="multiple"
+                                required />
 							
 
                             <br><br>
@@ -310,11 +316,13 @@
                                     type="checkbox"
                                     class="checkbox8"
                                     name="brinquedo"
-									value="{{ old('brinquedo') }}"/></label>
+                                    value="{{ old('brinquedo') }}"/></label>
+                                    
+                            <input type="hidden" name="anunciante" value="{{ Auth::user()->id }}" />
 
                             <br>
                             <br>
-                            <button class="button" type="submit">Cadastrar</button>
+                            <button class="button" type="submit" onclick="inserido()">Cadastrar</button>
 
                             <br>
 
@@ -338,18 +346,38 @@
 
                 let input = document.querySelector('#images');
                 input.addEventListener('change', () => {
-                    if (input.files.length > 16) {
+                    if (input.files.length >= 16) {
                         Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'O máximo de imagens por local cadastrado é 12...'
+                        text: 'O máximo de imagens por local cadastrado é 15...'
                         })
                         input.value = "";
                         return false;
-                    } else {
+                    } else if (input.files.length = 0) {
+
+                       Swal.fire({
+						    icon: 'error',
+							title: 'Oops...',
+							text: 'Mínimo de 1 imagem por local cadastrado.'
+						})
+								   
+                        
+                    }
+                    else {
                         return true;
                     }
                 });
+
+
+                function inserido() {
+                    Swal.fire({
+						icon: 'success',
+						title: 'Uhuul',
+						text: 'O seu espaço foi cadastrado com sucesso.'
+						})
+					
+                }
 
 
             </script>

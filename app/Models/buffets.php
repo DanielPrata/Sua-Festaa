@@ -28,7 +28,8 @@ class buffets extends Model
         'lembrancinha',
         'comida',
         'brinquedo',
-        'images'
+        'images',
+        'anunciante'
     ];
     protected $table='buffets';
 }

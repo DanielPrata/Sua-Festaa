@@ -31,6 +31,7 @@ class CreateBuffetsTable extends Migration
             $table->boolean('comida')->nullable()->default(0);
             $table->boolean('brinquedo')->nullable()->default(0);
             $table->json('images');
+            $table->string('anunciante');
             $table->timestamps();
 
         });

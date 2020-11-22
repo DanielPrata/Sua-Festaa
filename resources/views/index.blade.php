@@ -160,8 +160,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="slider-content">
-                                    <h1 class="title">Sistema de avaliação</h1>
-                                    <p class="text">A avaliação pode ser feita pelos usuários, deixando comentários e notas para um espaço cadastrado.</p>
+                                    <h1 class="title">Gerador de convites</h1>
+                                    <p class="text">Nosso gerador de convites te dá a possibilidade de criar um convite exclusivo pro seu evento.</p>
                                     <ul class="slider-btn rounded-buttons">
                                         <li><a class="main-btn rounded-two" href="{{ route('login') }}">LOGIN</a></li>
                                         <li><a class="main-btn rounded-two" href="{{ route('register') }}">CADASTRAR</a></li>
@@ -265,8 +265,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-10">
                     <div class="section-title text-center pb-25">
-                        <h3 class="title">Diferentes pacotes</h3>
-                        <p class="text">O nosso serviço custa um preço acessível que cabe no seu bolso. Por isso temos dois tipos de pacotes para diferentes fins.</p>
+                        <h3 class="title">Mensalidade que cabe no seu bolso.</h3>
+                        <p class="text">Contamos com funcionalidades que ajudarão na divulgação do seu espaço. Alavancando o seu negócio.</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -277,17 +277,15 @@
                             <img src="assets/homepage/images/basico.svg" alt="">
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title">Starter</h5>
-                            <p class="month"><span class="price">$ </span>/</p>
+                            <h5 class="sub-title">Prime</h5>
+                            <p class="month"><span class="price">R$ 79,90 </span></p>
                         </div>
                         <div class="pricing-list">
                             <ul>
                                 <li><i class="lni lni-check-mark-circle"></i> Divulgação do seu espaço</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Bate papo com o interessado no espaço</li>
                                 <li><i class="lni lni-check-mark-circle"></i> Acesso à página de admin</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Sistema de avaliação do seu local</li>
-                                <li><i class="lni lni-check-mark-circle"></i><s> Diversos buffets e/ou casas para festas</s></li>
-                                <li><i class="lni lni-check-mark-circle"></i><s> Gerador de convites automático</s></li>
+                                <li><i class="lni lni-check-mark-circle"></i> Diversos buffets e/ou casas para festas</li>
+                                <li><i class="lni lni-check-mark-circle"></i> Gerador de convites automático</li>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
@@ -297,31 +295,7 @@
                 </div>
                 
                 
-                
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="pricing-style mt-30">
-                        <div class="pricing-icon text-center">
-                            <img src="assets/homepage/images/profissional.svg" alt="">
-                        </div>
-                        <div class="pricing-header text-center">
-                            <h5 class="sub-title">Premium</h5>
-                            <p class="month"><span class="price">$ </span>/</p>
-                        </div>
-                        <div class="pricing-list">
-                            <ul>
-                                <li><i class="lni lni-check-mark-circle"></i> Divulgação do seu espaço</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Bate papo com o interessado no espaço</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Acesso à página de admin</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Sistema de avaliação do seu local</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Diversos buffets e/ou casas para festas</li>
-                                <li><i class="lni lni-check-mark-circle"></i> Gerador de convites automático</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-btn rounded-buttons text-center">
-                            <a class="main-btn rounded-one" href="{{ route('login') }}">ADQUIRIR</a>
-                        </div>
-                    </div> <!-- pricing style one -->
-                </div>
+            
             </div> <!-- row -->
         </div> <!-- container -->
     </section>

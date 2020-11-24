@@ -4,7 +4,7 @@
 	<title>Dashboard</title>
 
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="icon" type="image/png" href="assets/dashboard/images/logo.png"/>
+	<link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
 
 	<!-- Import lib -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
@@ -41,7 +41,7 @@
 	<div class="sidebar">
 		<ul class="sidebar-nav">
 			<li class="sidebar-nav-item">
-				<a href="#" class="sidebar-nav-link">
+				<a href="{{ url('/dashboard') }}" class="sidebar-nav-link">
 					<div>
 						<i class="fas fa-home black"></i>
 					</div>
@@ -92,122 +92,53 @@
 	<!-- end sidebar -->
 	<!-- main content -->
 	<div class="wrapper">
-		<div class="row">
-			
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
-					<p>
-						<i class="fas fa-spinner"></i>
-					</p>
-					<h3>13.</h3>
-					<p>Alugueis em andamento</p>
-				</div>
-			</div>
-			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
-					<p>
-						<i class="fas fa-check-circle"></i>
-					</p>
-					<h3>23</h3>
-					<p>Festas finalizadas</p>
-				</div>
-			</div>
-			
-		</div>
+		
 		<div class="row">
 			<div class="col-12 col-m-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
 						<h3>
-							Usuários interessados
+							Seus locais
 						</h3>
-						<i class="fas fa-ellipsis-h"></i>
+						
 					</div>
 					<div class="card-content">
 						<table>
+
+							@if ($buffets == null)
+
+							<h1>Você não cadastrou nenhum local ainda.</h1>
+								
+							@else
+
 							<thead>
 								<tr>
-									<th>Ordem</th>
 									<th>Espaço de interesse</th>
 									<th>Email</th>
-									<th>Situação</th>
-									<th>Data planejada</th>
+									<th>Endereço do local</th>
+									<th>Telefone</th>								
 								</tr>
 							</thead>
+
+							@foreach ($buffets as $b)
+
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>Buffet TESTE 1</td>
-									<td>renatoaurelio@gmail.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-success"></i>
-											Aluguel completo
-										</span>
-									</td>
-									<td>18/10/2020</td>
+								
+									<td>{{ $b->nome }}</td>
+									<td>{{ $b->email }}</td>
+									<td>{{ $b->endereco }}</td>
+									<td> {{ $b->telefone }} </td>
+									
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Buffet TESTE 1</td>
-									<td>xandaosouza@hotmail.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											Em processo
-										</span>
-									</td>
-									<td>15/10/2020</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Buffet FINDFEST</td>
-									<td>ustavoteles@bol.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											Em processo
-										</span>
-									</td>
-									<td>16/10/2020</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Casa com piscina</td>
-									<td>danielprata@gmail.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-danger"></i>
-											Cancelado
-										</span>
-									</td>
-									<td>10/10/2020</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>Casa com churrasqueira</td>
-									<td>ianarnold@hotmail.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-primary"></i>
-											Pendente
-										</span>
-									</td>
-									<td>21/10/2020</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>Festa residencial</td>
-									<td>daniuebele@gmail.com</td>
-									<td>
-										<span class="dot">
-											<i class="bg-primary"></i>
-											Pendente
-										</span>
-									</td>
-									<td>26/11/2020</td>
-								</tr>
+								
 							</tbody>
+
+							@endforeach
+								
+							@endif
+							
+							
 						</table>
 					</div>
 				</div>
@@ -215,85 +146,107 @@
 		
 		</div>
 		<div class="row">
-			<div class="col-12 col-m-12 col-sm-12">
-				<div class="card">
-					<div class="card-header">
-						<h3>
-							Seus locais cadastrados
-						</h3>
-					</div>
-					<div class="card-content">
-						<table>
-							<thead>
-								<tr>
-									<th>Ordem</th>
-									<th>Nome</th>
-									<th>Telefone</th>
-									<th>Endereço</th>
-									<th>Disponibilidade</th>
-									<th>Editar</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Buffet TESTE 1</td>
-									<td>(13) 99187-1732</td>
-									<td>Rua das flores, 32</td>
-									<td>
-										<span class="dot">
-										<i class="bg-warning"></i>
-										Não disponível
-									</span>
-								</td>
-									<td> <i class="fas fa-pencil-alt"></i></td>
-								</tr>
+			
+			
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<a href="{{ url('/geradorconvite')}}" style="text-decoration: none; color: inherit;">
+					<p>
+						<i class="fas fa-envelope"></i>
+					</p>
+					<h3>Gerador de convites</h3>
+					<p>&nbsp;</p>
+					</a>
+				</div>
+			</div>
 
-								<tr>
-									<td>1</td>
-									<td>Buffet FINDFEST</td>
-									<td>(13) 96437-1772</td>
-									<td>Rua das velas, 2</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											Não disponível
-										</span>
-									</td>
-									<td> <i class="fas fa-pencil-alt"></i></td>
-								</tr>
 
-								<tr>
-									<td>1</td>
-									<td>Casa com piscina</td>
-									<td>(13) 99347-1732</td>
-									<td>Avenida Presidente Wilson, 102</td>
-									<td><span class="dot">
-										<i class="bg-success"></i>
-										Disponível
-									</span></td>
-									<td> <i class="fas fa-pencil-alt"></i></td>
-								</tr>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<a href="{{ url('/addbuffet')}}" style="text-decoration: none; color: inherit;">
+					<p>
+						<i class="fas fa-plus-circle"></i>
+					</p>
+					<h3>Cadastrar o seu local</h3>
+					<p>&nbsp;</p>
+					</a>
+				</div>
+			</div>
 
-								<tr>
-									<td>1</td>
-									<td>Casa com churrasqueira</td>
-									<td>(13) 99187-1732</td>
-									<td>Rua João Ramalho, 32</td>
-									<td><span class="dot">
-										<i class="bg-success"></i>
-										Disponível
-									</span></td>
-									<td> <i class="fas fa-pencil-alt"></i></td>
-								</tr>
-								
-							</tbody>
-						</table>
-					</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<a href="{{ url('/lista')}}" style="text-decoration: none; color: inherit;">
+					<p>
+						<i class="fas fa-birthday-cake"></i>
+					</p>
+					<h3>Todos espaços cadastrados</h3>
+					<p>&nbsp;</p>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<a href="{{ url('/home')}}" style="text-decoration: none; color: inherit;">
+					<p>
+						<i class="fas fa-sign-out-alt"></i>
+					</p>
+					<h3>Voltar pra home</h3>
+					<p>&nbsp;</p>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counterlinha1">
+					<p>
+						&nbsp;
+					</p>
+					
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counterlinha1">
+					<p>
+						&nbsp;
+					</p>
+					
 					
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counterlinha1">
+					<p>
+						&nbsp;
+					</p>
+					
+					
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counterlinha1">
+					<p>
+						&nbsp;
+					</p>
+					
+					
+				</div>
+			</div>
+		</div>
+
+		
+
+		
 	</div>
 	<!-- end main content -->
 	<!-- import script -->

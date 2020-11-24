@@ -4,6 +4,8 @@
 	--warning-color: #f0932b;
 	--danger-color: #eb4d4b;
 
+	--azul-color: #0410c4;
+
 	--light-color: #212529;
 	--light-second-color: #727475;
 	--light-background: #ffffff;
@@ -51,6 +53,10 @@
 
 .bg-danger {
   background: var(--danger-color);
+}
+
+.bg-azul {
+	background: var(--azul-color);
 }
 
 * {
@@ -474,6 +480,7 @@ body {
 }
 
 .counter {
+	margin-top: 30px;
 	padding: 16px;
 	text-align: center;
 	color: #fff;
@@ -481,7 +488,15 @@ body {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.couner i {
+.counterlinha1 {
+	padding: 16px;
+	text-align: center;
+	color: #fff;
+	border-radius: 10px;
+	
+}
+
+.counter i {
 	font-size: 50px;
 }
 

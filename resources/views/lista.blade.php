@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Festa | Sua plataforma de Festas</title>
+
+    <link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
     <!--LINKS DOS CSSs-->
     <link rel="stylesheet" href="assets/filtro/styles/main.css">
     <link rel="stylesheet" href="assets/filtro/styles/partials/header.css">

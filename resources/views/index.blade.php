@@ -30,6 +30,8 @@
     
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/homepage/css/style.css">
+
+    <link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
     
 </head>
 

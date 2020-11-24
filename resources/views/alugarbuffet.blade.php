@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Festa | Sua plataforma de festas</title>
+    <link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
 
      <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/main.css">
     <link rel="stylesheet" href="{{env('ALUGUEL_CSS')}}/styles/partials/header.css">

@@ -12,7 +12,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/landingpage/css/style.css">
-    <link rel="icon" type="image/png" href="assets/dashboard/images/logo.png"/>
+    <link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
     <script src="https://kit.fontawesome.com/35e789ec36.js" crossorigin="anonymous"></script>
 
     <title>Página inicial</title>

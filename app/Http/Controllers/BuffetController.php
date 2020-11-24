@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\buffets;
 use Illuminate\Support\Facades\Validator;
+Use Illuminate\Support\Facades\Auth;
 
 class BuffetController extends Controller
 {
@@ -41,7 +42,14 @@ class BuffetController extends Controller
         $pessoa->images=json_encode($data);
        
        $pessoa->save();
-       return view('/dashboard');
+       
+
+       $anunciante = Auth::user()->id;
+
+       $buffets = DB::select('select * from buffets where anunciante = '. $anunciante);    
+       
+
+       return view('dashboard',['buffets'=>$buffets]);
 
        
     }
@@ -50,6 +58,19 @@ class BuffetController extends Controller
             $buffets = DB::select('select * from buffets');         
 		   return view('lista',['buffets'=>$buffets]);	
     }
+
+    public function listarBuffets() {
+
+        $anunciante = Auth::user()->id;
+
+        $buffets = DB::select('select * from buffets where anunciante = '. $anunciante);    
+        
+
+		return view('dashboard',['buffets'=>$buffets]);
+
+    }
+
+
 
     public function alugarView($id) {
         

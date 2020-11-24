@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Adicionar local</title>
+        <link rel="icon" type="icone.png" href="assets/imglogin/icon.png"/>
 
         <meta
             name="viewport"

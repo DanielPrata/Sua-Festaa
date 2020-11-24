@@ -486,6 +486,19 @@ body {
 	color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	-webkit-transition: 0.3s ease-in;
+	-moz-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
+	transition: 0.3s ease-in
+}
+
+.counter:hover {
+	
+	color: #7c06a3;
+     -webkit-transition: 0.3s ease-in;
+     -moz-transition: 0.3s ease-in; 
+     -o-transition: 0.3s ease-in;
+     transition: 0.3s ease-in
 }
 
 .counterlinha1 {

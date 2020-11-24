@@ -280,7 +280,7 @@
                         </div>
                         <div class="pricing-header text-center">
                             <h5 class="sub-title">Prime</h5>
-                            <p class="month"><span class="price">R$ 79,90 </span></p>
+                            <p class="month"><span class="price">R$ 49,90 </span></p>
                         </div>
                         <div class="pricing-list">
                             <ul>

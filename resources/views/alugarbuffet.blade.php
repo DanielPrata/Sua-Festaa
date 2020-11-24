@@ -126,6 +126,10 @@
                 <br>
                 @endif
                 <br>
+
+            @if ($buffets->dj === 0 && $buffets->lembrancinha === 0 && $buffets->comida === 0 && $buffets->brinquedo === 0 )
+
+            @else
             <p id="p-descrição" style="text-align: center">EXCLUSIVIDADES: </p>
             <br>
 
@@ -148,6 +152,7 @@
                 <p id="p-descrição"> Oferece brinquedo. </p>
                 <br>
                 @endif
+            @endif
                 
 
 
